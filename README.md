@@ -6,5 +6,6 @@
     button then you successfully singIn and in the next Page your are allowed to see the people 
     around u in the above mention criteria.
      
-     I basically did this project by HTML and JavaScript in the frontend. For the backend i used MySQL,Servlet for the data to fetching
-      from the user and place in the local DataBase and also all the user see the near by person in Map only.
+     I basically did this project by HTML and JavaScript in the frontend. For the backend i used MySQL,
+     Servlet for the data to fetchingfrom the user and place in the local DataBase and also all the user 
+     see the near by person in Map only.
