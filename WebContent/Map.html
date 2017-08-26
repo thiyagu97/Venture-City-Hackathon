@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Map</title>
+<style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-KahKtT-B3tT0y1q3-7AAOynoSMypkMQ&callback=myMap"></script>
+</head>
+<body background="background1.jpg">
+
+<center><p style="text-align: center;"><h1>Welcome...! :-)</h1></p></center>
+<p><h2>Click this Button to find the nearby learner or Teacher</h2></p>
+<button onclick="getLocation()" style=" background-color: #4CAF50;color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 25%;">Click Me!</button>
+
+<p id="demo"></p>
+<div id="map-canvas"></div>
+<script>
+var x = document.getElementById("demo");
+var la;var lo;var center;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+la=(position.coords.latitude)-1.74695232;
+lo=(position.coords.longitude)-2.55608864;
+var mapOptions = {
+        zoom: 15,
+        center: new google.maps.LatLng(la, lo),
+        
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+     var  map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+    
+         	var locations = [];
+      	locations.push ({name :"Email: saravan456@gmail.com; Phno.7849564852; Dance" ,latlng:new google.maps.LatLng((la-0.0009625) , (lo-0.00271976))} );
+      	locations.push ({name :"Email: Wastonlondan@yahoo.com; phno.5418756974; Cooking " ,latlng:new google.maps.LatLng((la-0.0039676) , (lo-0.00210822))} );
+      	locations.push ({name :"Email: dhonicsk@gmail.com; phno.1428569745; programming " , latlng:new google.maps.LatLng((la-0.0020565628563) , (lo-0.0071507692337))} );
+      	locations.push ({name :"Email: yoki456@gmail.com; phno.8749864102; drawing " , latlng:new google.maps.LatLng((la-0.00039448251341) , (lo-0.0051873922348))} );
+      	locations.push ({name :"Email: Arunui@yahoo.com; phno.7419517539; yoga " , latlng:new google.maps.LatLng((la-0.00015253330307) , (lo-0.0033849477768))} );
+      	locations.push ({name :"Email: swathi98/@gmail.com; phno.9513574682;driving " , latlng:new google.maps.LatLng((la-0.00181461505313) , (lo-0.0006490945816))} );
+        locations.push ({name :"Email: rajaKing@gmail.com; Phno.8529631475; swimming" ,latlng:new google.maps.LatLng((la-0.00068828239908) , (lo-0.00105679035187))} );
+      	locations.push ({name :"Email: hustanD@yahoo.com; phno.9467584291; projects " ,latlng:new google.maps.LatLng((la-0.00159371489719) , (lo-0.00379264354784))} );
+      	locations.push ({name :"Email: KoliCp@gmail.com; phno.7831425980; school subject" , latlng:new google.maps.LatLng((la-0.0023405882769) , (lo-0.00105142593384))} );
+      	locations.push ({name :"Email: somui7@gmail.com; phno.9102054139; electrical items" , latlng:new google.maps.LatLng((la-0.0007100681321) , (lo-0.00269293785095))} );
+      	locations.push ({name :"Email: GownthamUx@yahoo.com; phno.9020147771; hardware parts" , latlng:new google.maps.LatLng((la-0.00063643293609) , (lo-0.00186145305633))} );
+      	locations.push ({name :"Email: arithiKumar@gmail.com; phno.9987415019; chess" , latlng:new google.maps.LatLng((la-0.00101513389892) , (lo-0.0019204616482))} );
+      	
+      	var bounds=new google.maps.LatLngBounds();
+      	var image = 'T.png';var image1 ='L.png';
+      	for(var i=0;i<locations.length;i++){
+      		if((i+1)%2==0){
+      		var marker =new google.maps.Marker({position: locations[i].latlng, map:map, title: locations[i].name, icon: image});}
+      		else{
+      			var marker =new google.maps.Marker({position: locations[i].latlng, map:map, title: locations[i].name, icon: image1});}
+      		bounds.extend (locations[i].latlng)
+      	}
+      	map.fitBounds (bounds);
+  }
+  window.onload = showPosition;
+</script>
+
+</body>
+</html>

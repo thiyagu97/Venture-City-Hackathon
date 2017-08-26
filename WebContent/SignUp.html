@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SignIn</title>
+<style>
+input[name=uname], input[name=email], input[name=Phone], input[name=teach], input[name=learn] {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#one{
+width: 55%;
+float:left;
+height:100%;
+}
+#two{
+width: 45%;
+float:right;
+height:100%;
+}
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 75%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body background="background.jpg">
+<header style="color: black;font-size: 40px; text-align: center;"><h2><B><br>Venture City Hackathon</B></h2></header><br><br>
+<div id="one">
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <center><img src= "IMG-20170825-WA0037.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+ <center> <img src="IMG-20170825-WA0025.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+ <center> <img src="IMG-20170825-WA0031.jpg" style="width:100%; height: 100%"></center>
+</div>
+<div class="mySlides fade">
+  <center><img src= "IMG-20170825-WA0030.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+  <center><img src= "IMG-20170825-WA0028.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+ <center> <img src="IMG-20170825-WA0039.jpg" style="width:100%; height: 100%"></center>
+</div>
+<div class="mySlides fade">
+  <center><img src="IMG-20170825-WA0027.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+  <center><img src= "abacus.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+  <center><img src="IMG-20170825-WA0043.jpg" style="width:100%; height: 100%"></center>
+</div>
+
+<div class="mySlides fade">
+  <center><img src="IMG-20170825-WA0014.jpg" style="width:100%; height: 100%"></center>
+</div>
+</div><br>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+</div>
+<script src="valid.js"></script>
+<div id="two">
+<form name="myform" action="Servlet" onsubmit="return validateForm()" method="post" style="padding-left: 50px">
+<pre>
+  <b style="font-size: 20px">Name : </b>
+  <input type="text" placeholder="Enter Username" name="uname" title="Enter UserName" required><br>
+  <b style="font-size:  20px">Email : </b>
+  <input type="text" placeholder="Enter Valid EmailID" name="email"  title="Enter your GmailId"required><br>
+  <b style="font-size: 20px">Phone Number : </b>
+  <input type="text" placeholder="Enter your contact number" name="Phone" title="Phone Number"required><br>
+  <b style="font-size: 20px">I Can teach : </b>
+  <input  type="text" list="subjects" name="teach" placeholder="eg.Driving;Web Design"required>
+  <datalist id="subjects">
+   <option value="Programming language"><option value="Cooking"><option value="Cricket">
+  <option value="Drawing"> <option value="College subject for EEE">  <option value="Music">
+  <option value="Dance"> <option value="BasketBall"> <option value="Sport Activity">
+  <option value="Swimming"><option value="Chess"><option value="Subjet for ECE">
+  <option value="Driving"><option value="About Sensor"><option value="Art Work"> <option value="Web Desing">
+  <option value="Abacus"><option value="Humming"><option value="Not Intrested"><option value="yoga">
+  </datalist>
+  <b style="font-size: 20px">I Want to learn : </b>
+  <input  type="text" list="subjects" name="learn" placeholder="eg.Chess;Dance" required>
+  <datalist id="subjects">
+   <option value="Programming language"><option value="Cooking">  <option value="Cricket">
+  <option value="Drawing">  <option value="College subject for EEE">  <option value="Music">
+  <option value="Dance">  <option value="BasketBall"> <option value="Sport Activity">
+  <option value="Swimming"> <option value="Chess"><option value="Subjet for ECE">
+  <option value="Driving"><option value="About Sensor"><option value="yoga">
+  <option value="Art Work"> <option value="Web Desing"><option value="Abacus"><option value="Humming"><option value="Not Intrested">
+  </datalist>
+         <button type="submit">Login</button>
+    </pre>
+    </form>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html> 
